@@ -1,0 +1,215 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Mengatur tata letak menjadi kolom */
+    align-items: center; /* Menengahkan elemen secara horizontal */
+    height: 100vh;
+    background-image: url("../images/bg1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+  
+  .popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+  }
+  
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .popup .close:hover {
+    color: #06D85F;
+  }
+  
+  .popup .content {
+    max-height: 30%;
+    overflow: auto;
+  }
+  
+  @media screen and (max-width: 700px) {
+    .popup {
+      width: 70%;
+    }
+  }
+
+
+.judul {
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    background-size: 200%;
+    color: rgb(0, 248, 0);
+    text-align: center; /* Menengahkan teks */
+    font-size: 2rem; /* Ukuran font yang lebih besar */
+    padding: 23px 0; /* Padding atas dan bawah */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Menambahkan bayangan teks */
+    margin-bottom: 20px; /* Jarak antara judul dan kontainer */
+    /* animation: blink 1s step-start infinite, shine 2s linear infinite; */
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1; /* Teks sepenuhnya terlihat */
+    }
+    50% {
+        opacity: 0; /* Teks tidak terlihat */
+    }
+}
+
+@keyframes shine {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.container {
+    display: flex; /* Mengubah tata letak menjadi flex untuk menempatkan nama dan visual berdampingan */
+    width: 750px;
+    height: 65%;
+    overflow: hidden;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 9px 20px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.name-list {
+    flex: 1; /* Memungkinkan nama untuk mengambil ruang yang tersedia */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+.progress-visual
+ {
+    width: 10px; /* Lebar visual */
+    position: absolute; /* Memastikan elemen ini berada di atas */
+    right: 0; /* Menempel di sebelah kanan kontainer */
+    top: 0; /* Mulai dari atas kontainer */
+    height: 100%; /* Memanjang sepanjang kontainer */
+    cursor: pointer; /* Menunjukkan bahwa elemen ini dapat di-drag */
+    transition: height 0.3s; /* Transisi untuk tinggi visual */
+    background-color: rgba(63, 63, 63, 0.418); /* Warna visual */
+}
+
+.progress-visual:hover {
+
+    background-color: rgba(44, 43, 43, 0.966); /* Warna visual */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.5rem;
+    padding: 5px 0;
+    opacity: 0.5;
+    transition: font-size 0.5s, opacity 0.5s;
+}
+
+li.center {
+    font-size: 3rem;
+    opacity: 1;
+    color: rgb(255, 0, 0);
+}
+
+li.small {
+    font-size: 1rem;
+    opacity: 0.3;
+}
+
+.controls {
+    margin-top: 20px; /* Jarak atas untuk kontrol */
+}
+
+.total-names {
+    position: absolute; /* Agar bisa diletakkan di dalam container */
+    font-family:"Times New Roman", Times, serif;
+    bottom: 10px; /* Jarak dari bawah */
+    right: 10px; /* Jarak dari kanan */
+    opacity: 0.5;
+    font-size: 1rem; /* Ukuran font */
+}
+
+button {
+    width: 80px; /* Atur lebar tombol */
+    height: 80px; /* Atur tinggi tombol */
+    background: linear-gradient(to bottom, #00ff15, #a903f7); /* Efek gradien */
+    color: #ffffff;
+    border: 2px rgb(2, 255, 255) solid;
+    border-radius: 50%; /* Membuat tombol bulat */
+    cursor: pointer;
+    margin: 10px;
+    font-size: 1rem; /* Ukuran font */
+    display: flex; /* Menampilkan tombol sebagai flexbox */
+    justify-content: center; /* Menyelaraskan teks secara horizontal */
+    align-items: center; /* Menyelaraskan teks secara vertikal */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan atas */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s; /* Transisi saat hover */
+}
+
+button:hover {
+    background: linear-gradient(
+        to bottom,
+        #aa6cbd,
+        #9b4db6
+    ); /* Warna gradien saat hover */
+    transform: translateY(-4px); /* Mengangkat tombol sedikit saat hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Bayangan yang lebih dalam saat hover */
+}
+
+button:focus {
+    outline: none; /* Menghilangkan outline saat tombol difokuskan */
+}
