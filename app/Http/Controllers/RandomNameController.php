@@ -10,6 +10,11 @@ use App\Models\ChoiceName;
 
 class RandomNameController extends Controller
 {
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
+    
     public function resetNames()
     {
         // Menghapus semua data dari tabel populate_name
@@ -19,13 +24,6 @@ class RandomNameController extends Controller
         return redirect()->back()->with('success', 'All names have been successfully deleted.');
     }
 
-    public function getNames()
-    {
-        // Mengambil semua nama dari tabel populate_name
-        $names = DB::table('populate_name')->pluck('name'); // Ambil hanya kolom 'name'
-
-        return view('Gatcha', ['names' => $names]);
-    }
 
     public function index()
     {
@@ -49,21 +47,6 @@ class RandomNameController extends Controller
         DB::table('populate_name')->insert(['name' => $request->name]);
 
         return redirect()->route('random-names.index')->with('success', 'Name added successfully!');
-    }
-
-    public function choice(Request $request)
-    {
-        $validator = Validator::make($request->all(), [
-            'nameTarget' => 'required|string|max:255',
-        ]);
-
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
-        }
-
-        DB::table('choice_name')->insert(['name_pilihan' => $request->nameTarget]);
-
-        return redirect()->route('random-names.index')->with('success', 'Target name added successfully!');
     }
 
     public function upload(Request $request)

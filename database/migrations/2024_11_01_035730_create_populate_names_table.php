@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('populate_names', function (Blueprint $table) {
             $table->id();
+            $table->string('names');
             $table->timestamps();
         });
     }

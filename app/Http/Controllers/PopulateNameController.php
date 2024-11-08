@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class PopulateNameController extends Controller
 {
+
     public function index()
     {
         // Mengambil semua data dari kolom name
