@@ -108,10 +108,3 @@ DB_PASSWORD=
 ```
 
 Sesuaikan nilai-nilai di atas dengan konfigurasi server lokal Anda.
-
-## Lisensi
-
-Proyek ini menggunakan lisensi [MIT](LICENSE).
-```
-
-Anda bisa menyesuaikan `username` dan `repo-name` pada bagian URL GitHub sesuai dengan repository Anda. Jika ada fitur atau bagian lain yang ingin Anda tambahkan, feel free to modify the content.
