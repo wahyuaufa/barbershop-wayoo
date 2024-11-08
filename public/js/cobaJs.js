@@ -158,7 +158,15 @@ let cnt = 0;
 function stopScrolling() {
     
     let choice = namapilihan[cnt];
-    const targetIndex = names.indexOf(choice);
+    let targetIndex;
+    if (namapilihan.length === 0) {
+        // Jika namapilihan adalah array kosong, ambil angka random dari 0 sampai names.length-1
+        targetIndex = Math.floor(Math.random() * names.length);
+    } else {
+        // Jika namapilihan tidak kosong, ambil index dari 'choice' di dalam array 'names'
+        targetIndex = names.indexOf(choice);
+    }
+
     if (currentIndex >= targetIndex && targetIndex >= names.length / 2){
         pilihanSusah = true;
     }
@@ -188,7 +196,7 @@ function stopScrolling() {
         // Jika currentIndex mencapai targetIndex, hentikan interval
         if (currentIndex === targetIndex) {
             cnt = (cnt + 1) % namapilihan.length; // Pastikan cnt tidak keluar dari batas
-            showPopup("Selamat",""+choice+" anda terpilih!");
+            showPopup("Selamat",""+names[targetIndex]+" anda terpilih!");
             pilihanSusah = false;
             clearInterval(intervalStop); // Hentikan interval setelah mencapai targetIndex
         }

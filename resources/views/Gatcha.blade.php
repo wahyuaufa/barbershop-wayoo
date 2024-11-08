@@ -14,9 +14,7 @@
 </head>
 
 <body>
-  <div class="judul">
-    <h1>Name Drawing</h1>
-  </div>
+
   <div class="container">
     <div class="name-list">
       <ul id="names">
@@ -39,6 +37,12 @@
 
   <div class="controls"> <!-- Ubah 'control' menjadi 'controls' untuk konsistensi -->
     <button id="startBtn">Go!</button>
+  </div>
+
+  <div class="addNames">
+    <a href="{{ route('addName.index') }}">
+      <button id="addName">Add Name</button>
+    </a>
   </div>
   <script src="{{ asset('js/cobaJs.js') }}"></script>
 </body>

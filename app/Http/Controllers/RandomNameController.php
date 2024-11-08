@@ -10,6 +10,15 @@ use App\Models\ChoiceName;
 
 class RandomNameController extends Controller
 {
+    public function resetNames()
+    {
+        // Menghapus semua data dari tabel populate_name
+        \App\Models\Name::truncate();
+
+        // Redirect kembali ke halaman dengan pesan sukses
+        return redirect()->back()->with('success', 'All names have been successfully deleted.');
+    }
+
     public function getNames()
     {
         // Mengambil semua nama dari tabel populate_name
@@ -24,6 +33,7 @@ class RandomNameController extends Controller
         $targetNames = DB::table('choice_name')->get();
         return view('random_names/index', compact('names', 'targetNames'));
     }
+
 
     public function store(Request $request)
     {

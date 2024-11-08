@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RandomNameController;
+use App\Http\Controllers\AddName;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,9 @@ Route::post('/random-names/upload', [RandomNameController::class, 'upload'])->na
 Route::post('/random-names/{id}', [RandomNameController::class, 'addToTarget'])->name('add-to-target');
 Route::delete('/random-names/{id}', [RandomNameController::class, 'deleteFromTarget'])->name('delete-from-target');
 Route::delete('/names/{id}', [RandomNameController::class, 'destroy'])->name('delete-name');
+Route::delete('/reset-names', [RandomNameController::class, 'resetNames'])->name('reset-names');
+Route::get('/addName', [AddName::class, 'index'])->name('addName.index');
+
 
 
 

@@ -118,6 +118,7 @@ body {
     text-align: center;
     box-shadow: 0 9px 20px rgba(0, 0, 0, 0.1);
     background-color: rgba(255, 255, 255, 0.8);
+    margin-top: 70px;
 }
 
 .name-list {
@@ -183,7 +184,7 @@ li.small {
     font-size: 1rem; /* Ukuran font */
 }
 
-button {
+#startBtn {
     width: 80px; /* Atur lebar tombol */
     height: 80px; /* Atur tinggi tombol */
     background: linear-gradient(to bottom, #00ff15, #a903f7); /* Efek gradien */
@@ -200,7 +201,7 @@ button {
     transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s; /* Transisi saat hover */
 }
 
-button:hover {
+#startBtn:hover {
     background: linear-gradient(
         to bottom,
         #aa6cbd,
@@ -210,6 +211,26 @@ button:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Bayangan yang lebih dalam saat hover */
 }
 
-button:focus {
+#startBtn:focus {
     outline: none; /* Menghilangkan outline saat tombol difokuskan */
 }
+
+.addNames {
+    position: fixed;
+    bottom: 30px;
+    right: 15px;
+}
+
+#addName {
+    padding: 10px 20px;
+    background-color: #2600ff;
+    color: white;
+    border: 1px solid ;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#addName:hover {
+    background-color: #06f0d1;
+}
+
